@@ -1,0 +1,6 @@
+<h1>Cars#index</h1>
+<p>Find me in app/views/cars/index.html.erb</p>
+
+<% @cars.each do |car| %>
+  <%= car.model %> <%= link_to 'See more', car_path(car) %>
+<% end %>
