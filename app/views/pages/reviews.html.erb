@@ -1,0 +1,17 @@
+  <div class="container">
+  <ul>
+    <% if @reviews != nil %>
+      <% @reviews.each do |review| %>
+        <li>
+         <%= review.description %> for <%= review.car.model %> <%= link_to '', edit_car_review_path(review.car, review), class: 'fas fa-edit' %>
+          <%= link_to '', car_review_path(review.car, review),
+                        method: :delete,
+                        data: {confirm: 'Are you sure?'},
+                        class: 'far fa-trash-alt'
+          %>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+
+  </div>
