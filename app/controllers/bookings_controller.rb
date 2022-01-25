@@ -22,12 +22,27 @@ class BookingsController < ApplicationController
   end
 
   def edit
+    @car = Car.find(params[:car_id])
+    @booking = Booking.find(params[:id])
   end
 
   def update
+    @car = Car.find(params[:car_id])
+    @booking = Booking.find(params[:id])
+    if @booking.update(booking_params)
+      redirect_to profile_path
+    else
+      render 'edit'
+    end
   end
 
-  def delete
+  def destroy
+    @booking = Booking.find(params[:id])
+    if @booking.destroy
+      redirect_to profile_path, notice: "Your booking for #{@booking.car.model} has been deleted."
+    else
+      render 'pages/profile'
+    end
   end
 
   private
