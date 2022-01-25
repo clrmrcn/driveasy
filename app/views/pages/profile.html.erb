@@ -4,7 +4,7 @@
   <ul>
     <% @bookings.each do |booking| %>
     <li>
-      <%= link_to "#{booking.car.model }", car_booking_path(booking.car, booking) %> <%= booking.start_date %> <%= booking.end_date  %>
+      <%= link_to "#{booking.car.model}", car_booking_path(booking.car, booking) %> <%= booking.start_date %> <%= booking.end_date  %>
       <%= link_to '', car_booking_path(booking.car, booking),
                     method: :delete,
                     data: {confirm: 'Are you sure?'},

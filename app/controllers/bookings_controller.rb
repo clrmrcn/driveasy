@@ -1,12 +1,12 @@
 class BookingsController < ApplicationController
+  before_action :set_booking, only: [:show, :edit, :update, :destroy]
+  before_action :set_car, except: :destroy
   def new
     @booking = Booking.new
-    @car = Car.find(params[:car_id])
   end
 
   def create
     @booking = Booking.new(booking_params)
-    @car = Car.find(params[:car_id])
     @booking.car = @car
     @booking.user = current_user
     if @booking.save
@@ -17,18 +17,14 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @car = Car.find(params[:car_id])
-    @booking = Booking.find(params[:id])
   end
 
   def edit
     @car = Car.find(params[:car_id])
-    @booking = Booking.find(params[:id])
   end
 
   def update
     @car = Car.find(params[:car_id])
-    @booking = Booking.find(params[:id])
     if @booking.update(booking_params)
       redirect_to profile_path
     else
@@ -37,7 +33,6 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    @booking = Booking.find(params[:id])
     if @booking.destroy
       redirect_to profile_path, notice: "Your booking for #{@booking.car.model} has been deleted."
     else
@@ -46,6 +41,14 @@ class BookingsController < ApplicationController
   end
 
   private
+
+  def set_booking
+    @booking = Booking.find(params[:id])
+  end
+
+  def set_car
+    @car = Car.find(params[:car_id])
+  end
 
   def booking_params
     params.require(:booking).permit(:start_date, :end_date)

@@ -1,8 +1,10 @@
 class ReviewsController < ApplicationController
+  before_action :set_car, except: :destroy
+  before_action :set_review, only: [:edit, :update, :destroy]
+
   def create
     @review = Review.new(review_params)
     @review.user = current_user
-    @car = Car.find(params[:car_id])
     @review.car = @car
     if @review.save
       redirect_to car_path(@car)
@@ -12,13 +14,9 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-    @car = Car.find(params[:car_id])
-    @review = Review.find(params[:id])
   end
 
   def update
-    @car = Car.find(params[:car_id])
-    @review = Review.find(params[:id])
     if @review.update(review_params)
       redirect_to profile_reviews_path
     else
@@ -27,11 +25,18 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    @review = Review.find(params[:id])
     redirect_to profile_reviews_path if @review.destroy
   end
 
   private
+
+  def set_car
+    @car = Car.find(params[:car_id])
+  end
+
+  def set_review
+    @review = Review.find(params[:id])
+  end
 
   def review_params
     params.require(:review).permit(:description)
