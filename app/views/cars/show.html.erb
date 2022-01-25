@@ -1,3 +1,16 @@
-<h1>You're looking at <%= @car.model %></h1>
-<p></p>
-<%= link_to 'Book now', new_car_booking_path(@car) %>
+<div class="container">
+  <h1>You're looking at <%= @car.model %></h1>
+  <h3>Reviews:</h3>
+  <% if @reviews != nil %>
+    <ul>
+    <% @reviews.each do |review| %>
+      <li><%= review.description %> by <%= review.user.username %></li>
+    <% end %>
+    </ul>
+    <p>Leave a review</p>
+  <% else %>
+    <p>Be the first to leave a review</p>
+  <% end %>
+  <%= render "reviews/review_form", car: @car, review: @review %>
+  <%= link_to 'Book now', new_car_booking_path(@car) %>
+</div>
