@@ -1,7 +1,7 @@
 .cards {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
   margin: 40px 0;
 }
 
