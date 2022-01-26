@@ -1,0 +1,14 @@
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: $purple;
+  transition: background 0.3s ease;
+  box-shadow: 1px 2px 4px 0 rgba($color: $black, $alpha: .20);
+}
+
+.btn-flat:hover {
+  background: $purple;
+  color: white;
+  box-shadow: 0px 0px 0px 0 rgba($color: $black, $alpha: .20);
+}

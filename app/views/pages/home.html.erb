@@ -1,2 +1,24 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1619408813565-4a07032673bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);">
+  <div class="container">
+    <h1>Rent a car <strong>easily</strong> with <strong>Driveasy</strong>!</h1>
+    <p>Drive around the city or escape to the countryside with peace of mind.</p>
+    <a class="btn btn-flat" href="/cars">See cars</a>
+  </div>
+</div>
+
+<div class="container">
+  <div class="cards">
+    <div class="card card-home">
+      <%= image_tag("undraw_security.png") %>
+      <h4>Secure website</h4>
+    </div>
+    <div class="card card-home">
+      <%= image_tag("undraw_car.png") %>
+      <h4>Quality cars</h4>
+    </div>
+    <div class="card card-home">
+      <%= image_tag("undraw_payment.png") %>
+      <h4>Easy payment</h4>
+    </div>
+  </div>
+</div>

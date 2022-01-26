@@ -1,0 +1,26 @@
+.cards {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px 0;
+}
+
+.card {
+  border-radius: 8px;
+  background-color: rgb(240, 240, 510);
+  box-shadow: 1px 2px 4px 0 rgba($color: $black, $alpha: .20);
+  &:hover {
+  box-shadow: 0px 0px 0px 0;
+  }
+}
+
+.card-home {
+  min-width: 212px;
+  align-items: center;
+}
+
+.card-home img {
+  height: 80%;
+  width: 212px;
+  object-fit: cover;
+  border-radius: 8px;
+}
