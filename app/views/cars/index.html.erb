@@ -7,7 +7,12 @@
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
         <div class="card-card-infos">
           <h2><%= car.model %></h2>
-          <p>Product description with <strong>relevant info</strong> only.</p>
+          <p><%= car.description %></p>
+          <%= link_to toggle_favorite_car_path(car), remote: true, method: :post do %>
+            <div class="like-icon mx-2 <%= 'red' if current_user.favorited?(car) %>" data-id = "<%= car.id %>">
+              <i class="fas fa-heart"></i>
+            </div>
+         <% end %>
           <%= link_to 'See more', car_path(car)%>
         </div>
       </div>
