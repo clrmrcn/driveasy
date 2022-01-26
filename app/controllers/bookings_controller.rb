@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
     @booking.car = @car
     @booking.user = current_user
     if @booking.save
-      redirect_to car_booking_path(@car, @booking), notice: "Driveasy has been notified and will answer rapidly to your booking"
+      redirect_to profile_path, notice: "Driveasy has been notified and will answer rapidly to your booking"
     else
       render 'new'
     end
