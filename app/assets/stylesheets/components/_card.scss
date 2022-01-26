@@ -1,6 +1,7 @@
 .cards {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   margin: 40px 0;
 }
 
@@ -35,6 +36,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  margin-top: 24px;
 }
 
 .card-car img {
