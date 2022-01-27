@@ -4,7 +4,7 @@
   <div class="cards">
     <% @cars.each do |car| %>
       <div class="card-car">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <%= cl_image_tag car.photo.key %>
         <div class="card-card-infos">
           <h2><%= car.model %></h2>
           <p><%= car.description %></p>

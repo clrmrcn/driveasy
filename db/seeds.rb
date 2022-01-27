@@ -6,5 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-car_1 = Car.create(model: 'citadine auto', description: 'manual car made to drive around the city')
-car_2 = Car.create(model: 'citadine manual', description: 'amazing city car with manual speed box')
+# car_1 = Car.create(model: 'citadine auto', description: 'manual car made to drive around the city')
+# car_2 = Car.create(model: 'citadine manual', description: 'amazing city car with manual speed box')
+
+
+file_1 = URI.open('https://stat.overdrive.in/wp-content/odgallery/2020/06/57263_2020_Mercedes_Benz_GLS.jpg')
+file_2 = URI.open('https://stat.overdrive.in/wp-content/odgallery/2022/01/61502_2022_Toyota_Camry-Hybrid.jpg')
+
+#Car.find(5).photo.attach(io: file_1, filename: 'car_1.png', content_type: 'image/png')
+Car.find(7).photo.attach(io: file_2, filename: 'car_2.png', content_type: 'image/png')

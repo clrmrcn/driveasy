@@ -5,6 +5,12 @@
   margin: 40px 0;
 }
 
+.cards-home {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px 0;
+}
+
 .card {
   border-radius: 8px;
   background-color: rgb(240, 240, 510);
@@ -42,7 +48,7 @@
 .card-car img {
   height: 100%;
   width: 120px;
-  object-fit: cover;
+  object-fit: center;
 }
 
 .card-car h2 {
