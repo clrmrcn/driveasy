@@ -1,4 +1,6 @@
-<%= simple_form_for([car, review]) do |f| %>
-  <%= f.input :description %>
-  <%= f.submit %>
-<% end %>
+<div class="col-6 m-auto">
+  <%= simple_form_for([car, review]) do |f| %>
+    <%= f.input :description %>
+    <%= f.submit class: 'btn-flat' %>
+  <% end %>
+</div>
