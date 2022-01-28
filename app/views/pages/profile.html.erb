@@ -1,17 +1,22 @@
 <div class="container">
   <h1> Welcome <%= current_user.username %></h1>
   <h3>Your bookings</h3>
-  <ul>
-    <% @bookings.each do |booking| %>
-    <li>
-      <%= link_to "#{booking.car.model}", car_booking_path(booking.car, booking) %> <%= booking.start_date %> <%= booking.end_date  %>
-      <%= link_to '', car_booking_path(booking.car, booking),
-                    method: :delete,
-                    data: {confirm: 'Are you sure?'},
-                    class: 'far fa-trash-alt'
-                  %>
-      <%= link_to '', edit_car_booking_path(booking.car, booking), class: 'fas fa-edit'  %>
-    </li>
-    <% end %>
-  </ul>
+    <div class="cards">
+      <% @bookings.each do |booking| %>
+        <div class="card-car">
+          <div class="card-car-infos">
+            <h2>Booking for <%= link_to "#{booking.car.model}", car_booking_path(booking.car, booking) %></h2>
+
+            <p><strong>Starting:</strong> <%= booking.start_date %></p>
+            <p><strong>Ending:</strong> <%= booking.end_date  %></p>
+            <%= link_to '', car_booking_path(booking.car, booking),
+                          method: :delete,
+                          data: {confirm: 'Are you sure?'},
+                          class: 'far fa-trash-alt'
+            %>
+            <%= link_to '', edit_car_booking_path(booking.car, booking), class: 'fas fa-edit'  %>
+          </div>
+        </div>
+      <% end %>
+    </div>
 </div>

@@ -6,7 +6,7 @@
       <%= select_tag :model,
         options_for_select(Car::MODELS),
         class: "form-control",
-        placeholder: "Find a car"
+        prompt: "Find a car"
       %>
       <%= submit_tag "Search", class: "btn btn-flat mt-2" %>
     <% end %>
