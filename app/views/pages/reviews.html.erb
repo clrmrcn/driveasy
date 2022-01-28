@@ -1,12 +1,9 @@
-
-  <div class="container">
+<div class="container">
   <h1>My reviews</h1>
-  <ul>
   <div class="cards">
     <% if @reviews != nil %>
       <% @reviews.each do |review| %>
       <div class="card-car">
-        <li>
         <div class="card-car-infos">
           <h5> <%= review.car.model %></h5>
          <%= review.description %> for <%= link_to '', edit_car_review_path(review.car, review), class: 'fas fa-edit' %>
@@ -16,12 +13,8 @@
                         class: 'far fa-trash-alt'
           %>
         </div>
-        </li>
       </div>
       <% end %>
     <% end %>
-
   </div>
-  </ul>
-
-  </div>
+</div>
