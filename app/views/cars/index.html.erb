@@ -1,6 +1,16 @@
 <div class="container">
   <h1>Cars</h1>
   <p> Here are all the cars available</p>
+  <div class="col-6 m-auto text-center">
+    <%= form_tag cars_path, method: :get do %>
+      <%= select_tag :model,
+        options_for_select(Car::MODELS),
+        class: "form-control",
+        placeholder: "Find a car"
+      %>
+      <%= submit_tag "Search", class: "btn btn-flat mt-2" %>
+    <% end %>
+  </div>
   <div class="cards">
     <% @cars.each do |car| %>
       <div class="card-car">

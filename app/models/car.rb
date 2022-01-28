@@ -4,4 +4,5 @@ class Car < ApplicationRecord
   validates :model, presence: true
   has_one_attached :photo
   acts_as_favoritable
+  MODELS = Car.all.map(&:model).uniq
 end
