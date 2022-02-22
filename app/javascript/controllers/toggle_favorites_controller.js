@@ -1,3 +1,4 @@
+
 const buttons = document.querySelectorAll('.like-icon');
 
 buttons.forEach((button) => {
