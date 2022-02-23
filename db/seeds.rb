@@ -20,7 +20,7 @@ puts 'creating  cars...'
 10.times do
   random = rand(0..cars.length - 1)
   last_model = cars[random]['models'].length - 1
-  Car.create(brand: "#{cars[random]['brand'].to_s}", model: "#{cars[random]['models'][rand(0..last_model)]}", description: 'Great car, easy to drive')
+  Car.create(brand: "#{cars[random]['brand']}", model: "#{cars[random]['models'][rand(0..last_model)]}", description: 'Great car, easy to drive')
   file = URI.open('https://stat.overdrive.in/wp-content/odgallery/2020/06/57263_2020_Mercedes_Benz_GLS.jpg')
   Car.last.photo.attach(io: file, filename: 'car.png', content_type: 'image/png')
 end
