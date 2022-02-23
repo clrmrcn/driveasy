@@ -19,6 +19,4 @@ import { toggleRed } from '../components/heart_icon';
 
 document.addEventListener('turbolinks:load', () => {
   toggleRed();
-  // Call your functions here, e.g:
-  // initSelect2();
 })

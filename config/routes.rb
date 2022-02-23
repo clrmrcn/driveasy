@@ -13,4 +13,5 @@ Rails.application.routes.draw do
 
   get '/profile', to: 'pages#profile'
   get '/profile/reviews', to: 'pages#reviews'
+  get '/profile/favorites', to: 'pages#favorites'
 end

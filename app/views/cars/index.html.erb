@@ -16,12 +16,13 @@
       <div class="card-car">
         <%= cl_image_tag car.photo.key %>
         <div class="card-card-infos">
-          <h2><%= car.model %></h2>   <%= link_to toggle_favorite_car_path(car), remote: true, method: :post do %>
+          <h2><%= car.model %></h2>
+          <%= link_to toggle_favorite_car_path(car), remote: true, method: :post do %>
             <div class="like-icon mx-2 <%= 'red' if current_user.favorited?(car) %>" data-id = "<%= car.id %>">
               <i class="fas fa-heart"></i>
             </div>
-          <p><%= car.description %></p>
          <% end %>
+          <p><%= car.description %></p>
           <%= link_to 'See more', car_path(car)%>
         </div>
       </div>

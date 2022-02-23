@@ -11,4 +11,8 @@ class PagesController < ApplicationController
   def reviews
     @reviews = Review.where(user: current_user)
   end
+
+  def favorites
+    @favorites = current_user.all_favorited
+  end
 end
