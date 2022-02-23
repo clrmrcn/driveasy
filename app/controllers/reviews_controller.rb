@@ -4,6 +4,7 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
+    authorize @review
     @review.user = current_user
     @review.car = @car
     if @review.save
@@ -14,9 +15,11 @@ class ReviewsController < ApplicationController
   end
 
   def edit
+    authorize @review
   end
 
   def update
+    authorize @review
     if @review.update(review_params)
       redirect_to profile_reviews_path
     else

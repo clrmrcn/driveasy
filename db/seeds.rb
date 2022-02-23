@@ -12,7 +12,6 @@ url = "https://raw.githubusercontent.com/FormidableLabs/radon-typeahead/master/d
 cars_serialized = URI.open(url).read
 cars = JSON.parse(cars_serialized)
 
-
 Car.destroy_all
 
 puts 'Cars destroyed'
